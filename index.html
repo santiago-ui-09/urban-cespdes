@@ -7,96 +7,200 @@
     <title>Urban Céspedes | Ropa Urbana</title>
 
     <style>
-
-                  
-        * {  
-            
+        * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background: #0a0a0a;
+            background: #080808;
             color: white;
         }
 
+        /* ===== HEADER ===== */
+
         header {
-            background: #000;
-            text-align: center;
-            padding: 50px 20px;
-            border-bottom: 2px solid #d4af37;
+            min-height: 650px;
+            background:
+                radial-gradient(circle at center, #222 0%, #080808 60%);
+            border-bottom: 1px solid #d4af37;
+            padding: 25px 7%;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 48px;
-            letter-spacing: 3px;
+        .barra {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        header h1 span {
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #d4af37;
+}
+    .logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-top: 4px;
+
+
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
             color: #d4af37;
         }
 
-        header p {
-            color: #bbb;
-            font-size: 18px;
+        /* ===== HERO ===== */
+
+        .hero {
+            max-width: 800px;
+            margin: 150px auto 0;
+            text-align: center;
         }
+
+        .etiqueta {
+            color: #d4af37;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #d4af37;
+        }
+
+        .descripcion {
+            color: #aaa;
+            font-size: 18px;
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .boton-hero {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 15px 32px;
+            background: #d4af37;
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .boton-hero:hover {
+            background: white;
+            transform: translateY(-4px);
+        }
+
+        /* ===== TITULO ===== */
 
         .titulo {
             text-align: center;
-            margin: 40px 0 10px;
+            padding: 80px 20px 35px;
         }
 
         .titulo h2 {
-            font-size: 32px;
+            font-size: 38px;
+            margin-bottom: 12px;
         }
 
         .titulo p {
-            color: #999;
+            color: #888;
         }
+
+        /* ===== PRODUCTOS ===== */
 
         .productos {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            padding: 30px;
+            gap: 30px;
             flex-wrap: wrap;
+            padding: 30px 7% 90px;
         }
 
         .producto {
-            background: #151515;
-            width: 280px;
-            padding: 25px;
-            text-align: center;
-            border-radius: 15px;
+            
+
+            width: 300px;
+            background: #111;
             border: 1px solid #292929;
-            transition: 0.3s;
+            border-radius: 18px;
+            overflow: hidden;
+            text-align: center;
+            transition: 0.4s;
         }
 
         .producto:hover {
-            transform: translateY(-8px);
+            transform: translateY(-10px);
             border-color: #d4af37;
+            box-shadow: 0 10px 35px rgba(212, 175, 55, 0.15);
         }
 
         .imagen-producto {
-            height: 180px;
-            background: #222;
-            border-radius: 10px;
+            height: 250px;
+            background: #1b1b1b;
             display: flex;
-            align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
-            color: #777;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .imagen-producto img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: 0.4s;
+        }
+
+        .producto:hover img {
+            transform: scale(1.06);
+        }
+
+        .contenido-producto {
+            padding: 25px;
         }
 
         .producto h3 {
             font-size: 22px;
-            margin: 10px 0;
+            margin-bottom: 10px;
         }
 
         .producto p {
-            color: #aaa;
+            color: #999;
+            margin-bottom: 12px;
         }
 
         .precio {
@@ -106,50 +210,116 @@
         }
 
         button {
+            border: none;
+            cursor: pointer;
             background: #d4af37;
             color: #000;
-            border: none;
-            padding: 13px 25px;
-            border-radius: 8px;
-            cursor: pointer;
+            padding: 12px 25px;
+            border-radius: 7px;
             font-weight: bold;
-            font-size: 15px;
+            transition: 0.3s;
         }
 
         button:hover {
-            background: #fff;
+            background: white;
         }
+
+        /* ===== NOSOTROS ===== */
+
+        .nosotros {
+            background: #111;
+            text-align: center;
+            padding: 80px 20px;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .nosotros h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .nosotros p {
+            max-width: 650px;
+            margin: auto;
+            color: #999;
+            line-height: 1.8;
+        }
+
+        /* ===== CONTACTO ===== */
 
         .contacto {
             text-align: center;
-            padding: 50px 20px;
-            background: #111;
-            margin-top: 30px;
+            padding: 80px 20px;
         }
 
         .contacto h2 {
-            font-size: 30px;
+            font-size: 35px;
+            margin-bottom: 15px;
         }
 
         .contacto p {
-            color: #aaa;
+            color: #999;
+            margin-bottom: 25px;
         }
 
+        /* ===== FOOTER ===== */
+
         footer {
-            text-align: center;
-            padding: 25px;
             background: #000;
+            border-top: 1px solid #222;
+            text-align: center;
+            padding: 30px 20px;
             color: #777;
         }
 
-        @media (max-width: 600px) {
+        footer strong {
+           } 
+            .creador {
+            margin-stop: 12px;
+            font-size:12px;
+             color: #555;
+        }
 
-            header h1 {
-                font-size: 34px;
+        /* ===== CELULAR ===== */
+
+       
+
+            @media (max-width: 700px) {
+
+            header {
+                padding: 25px 20px;
+                min-height: 620px;
             }
 
-            .productos {
-                padding: 20px;
+            .barra {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                gap: 18px;
+            }
+
+            .hero {
+                margin-top: 100px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .etiqueta {
+                font-size: 10px;
+                letter-spacing: 3px;
+            }
+
+            .descripcion {
+                font-size: 16px;
+            }
+
+            .titulo h2 {
+                font-size: 30px;
             }
 
             .producto {
@@ -162,107 +332,280 @@
 
 <body>
 
-    <header>
-        <h1>URBAN <span>CÉSPEDES</span></h1>
-        <p>Ropa urbana para quienes tienen su propio estilo.</p>
+    <!-- ===== ENCABEZADO ===== -->
+
+    <header id="inicio">
+
+        <div class="barra">
+
+            <div class="logo">
+                URBAN <span>CÉSPEDES</span>
+                <small>WEB DESIGN PROJECT</small>
+            </div>
+
+            <nav>
+                 <a href="#inicio">Inicio</a>
+                 <a href="#coleccion">Colección</a>
+                 <a href="#nosotros">Nosotros</a>
+                 <a href="#servicios">Servicios</a>
+                 <a href="#contacto">Contacto</a>
+            </nav>
+
+        </div>
+
+        <div class="hero">
+
+            <p class="etiqueta">
+                ESTILO • ACTITUD • PERSONALIDAD
+            </p>
+
+            <h1>
+                VISTE TU<br>
+                <span>PROPIO ESTILO</span>
+            </h1>
+
+            <p class="descripcion">
+                Ropa urbana para quienes no tienen miedo de destacar.
+            </p>
+
+            <a href="#coleccion" class="boton-hero">
+                VER COLECCIÓN
+            </a>
+
+        </div>
+
     </header>
 
-    <section class="titulo">
+
+    <!-- ===== COLECCIÓN ===== -->
+
+    <section class="titulo" id="coleccion">
+
         <h2>NUEVA COLECCIÓN</h2>
-        <p>Descubre nuestros productos</p>
+
+        <p>
+            Descubre nuestra selección de ropa urbana.
+        </p>
+
     </section>
+
 
     <section class="productos">
 
+        <!-- CAMISETA -->
+
         <div class="producto">
 
             <div class="imagen-producto">
-                <img src="./camiseta.jpg" alt="camiseta urban" width="100%" height="180">
+
+                <img
+                    src="camiseta.jpg"
+                    alt="Camiseta Urban"
+                >
+
             </div>
 
-            <h3>Camiseta Urban</h3>
+            <div class="contenido-producto">
 
-            <p>Diseño urbano exclusivo</p>
+                <h3>Camiseta Urban</h3>
 
-            <p class="precio">$50.000</p>
+                <p>
+                    Diseño urbano exclusivo
+                </p>
 
-            <button onclick="comprar('Camiseta Urban', '50.000')">
-                Comprar
-            </button>
+                <p class="precio">
+                    $50.000
+                </p>
+
+                <button onclick="comprar('Camiseta Urban', '50.000')">
+                    Ver producto
+                </button>
+
+            </div>
 
         </div>
 
 
+        <!-- GORRA -->
+
         <div class="producto">
 
             <div class="imagen-producto">
-                <img src="gorra.jpg" alt="gorra urban" width="100%" height="180">
+
+                <img
+                    src="gorra.jpg"
+                    alt="Gorra Urban"
+                >
+
             </div>
 
-            <h3>Gorra Urban</h3>
+            <div class="contenido-producto">
 
-            <p>Estilo para todos los días</p>
+                <h3>Gorra Urban</h3>
 
-            <p class="precio">$35.000</p>
+                <p>
+                    Estilo para todos los días
+                </p>
 
-            <button onclick="comprar('Gorra Urban', '35.000')">
-                Comprar
-            </button>
+                <p class="precio">
+                    $35.000
+                </p>
+
+                <button onclick="comprar('Gorra Urban', '35.000')">
+                    Ver producto
+                </button>
+
+            </div>
 
         </div>
 
 
+        <!-- HOODIE -->
+
         <div class="producto">
 
             <div class="imagen-producto">
-                <img src="hoodie.jpg" alt="hoodie urban" width="100%" height="180">
+
+                <img
+                    src="hoodie.jpg"
+                    alt="Hoodie Urban"
+                >
+
             </div>
 
-            <h3>Hoodie Urban</h3>
+            <div class="contenido-producto">
 
-            <p>Comodidad y estilo</p>
+                <h3>Hoodie Urban</h3>
 
-            <p class="precio">$80.000</p>
+                <p>
+                    Comodidad y estilo
+                </p>
 
-            <button onclick="comprar('Hoodie Urban', '80.000')">
-                Comprar
-            </button>
+                <p class="precio">
+                    $80.000
+                </p>
+
+                <button onclick="comprar('Hoodie Urban', '80.000')">
+                    Ver producto
+                </button>
+
+            </div>
 
         </div>
 
     </section>
 
 
-    <section class="contacto">
+    <!-- ===== NOSOTROS ===== -->
 
-        <h2>¿Quieres hacer un pedido?</h2>
+    <section class="nosotros" id="nosotros">
 
-        <p>Escríbenos por WhatsApp y te ayudamos.</p>
+        <h2>URBAN CÉSPEDES</h2>
 
-        <button onclick="contactar()">
-            CONTACTAR POR WHATSAPP
-        </button>
+        <p>
+            Una marca inspirada en la cultura urbana,
+            la personalidad y la libertad de expresar
+            quién eres a través de tu estilo.
+        </p>
 
     </section>
 
+<!-- ===== SERVICIOS WEB ===== -->
+
+<section class="servicios" id="servicios">
+
+    <p class="etiqueta-servicios">
+        ¿TIENES UN NEGOCIO?
+    </p>
+
+    <h2>HAZ QUE TU MARCA<br><span>TENGA PRESENCIA ONLINE</span></h2>
+
+    
+<p class="texto-servicios">
+        Diseños web modernos, rápidos y adaptados a celulares
+        para mostrar tus productos o servicios en internet.
+    </p>
+
+    <div class="servicios-grid">
+
+        <div class="servicio">
+            <div class="icono">💻</div>
+            <h3>Páginas web</h3>
+            <p>
+                Sitios modernos para negocios, emprendimientos
+                y marcas personales.
+            </p>
+        </div>
+
+        <div class="servicio">
+            <div class="icono">📱</div>
+            <h3>Diseño adaptable</h3>
+            <p>
+                Páginas que funcionan correctamente en celulares,
+                tablets y computadores.
+            </p>
+        </div>
+
+        <div class="servicio">
+            <div class="icono">🎨</div>
+            <h3>Diseño personalizado</h3>
+            <p>
+                Diseños adaptados a la identidad y estilo
+                de cada negocio.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+      
+ <!-- ===== CONTACTO ===== -->
+
+    <section class="contacto" id="contacto">
+
+        <h2>¿TIENES UN NEGOCIO?</h2>
+
+    <p>
+        Puedo ayudarte a crear una página web moderna
+        para mostrar tu negocio, productos o servicios.
+    </p>
+
+    <button onclick="contactar()">
+        HABLAR POR WHATSAPP
+    </button>
+    </section>
+
+
+    <!-- ===== PIE DE PÁGINA ===== -->
 
     <footer>
+    <p>
+        © 2026 <strong>Urban Céspedes</strong>
+    </p>
 
-        <p>© 2026 Urban Céspedes</p>
+    <p>
+        Ropa urbana • Estilo • Calidad
+    </p>
 
-        <p>Ropa urbana • Estilo • Calidad</p>
-
+    <p class="creador">
+        Diseño y desarrollo web — Proyecto de portafolio
+    </p>
+        
     </footer>
 
+
+    <!-- ===== JAVASCRIPT ===== -->
 
     <script>
 
         function comprar(producto, precio) {
 
-            let numero = "3000000000";
+            let numero = "573026263941";
 
             let mensaje =
-                "Hola, quiero comprar el producto " +
+                "Hola, quiero conocer más sobre el producto " +
                 producto +
                 " que tiene un precio de $" +
                 precio;
@@ -282,7 +625,7 @@
             let numero = "573026263941";
 
             let mensaje =
-                "Hola, estoy interesado en los productos de Urban Céspedes.";
+                "Hola, estoy interesado en conocer el proyecto Urban Céspedes.";
 
             let url =
                 "https://wa.me/" +
